@@ -21,8 +21,8 @@ type Obj struct {
 	Title      string   `xml:"title"`
 	Date       string   `xml:"date"`
 
-	//Image
-	Desc string `xml:"description"`
+	Image string `xml:Image`
+	Desc  string `xml:"description"`
 
 	Type        string `xml:"type"`
 	Format      string `xml:"format"`
@@ -42,14 +42,14 @@ type Obj struct {
 	Rights   string `xml:"rights"`
 	Language string `xml:"language"`
 
-	//Relation string `xml:"relation"`
+	Relation string `xml:"relation"`
 }
 
 var fileArray []string
 
 func main() {
 
-	filepath.Walk("./items", VisitFiles)
+	filepath.Walk("./content", VisitFiles)
 
 	for i := 0; i < len(fileArray); i++ {
 		//fmt.Println(fileArray[i])
@@ -69,7 +69,7 @@ func main() {
 
 		for m := 0; m < len(item.Rdf); m++ {
 			//fmt.Println("ITEM: " + item.Rdf[m].Title)
-			webpageName := "pages/" + item.Rdf[m].Identifier + ".html"
+			webpageName := "./site/pages/" + item.Rdf[m].Identifier + ".html"
 			stachio(item.Rdf[m], webpageName)
 		}
 	}
