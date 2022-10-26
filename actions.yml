@@ -1,0 +1,15 @@
+name: 'Folk Archive'
+description: 'Run the Folk Archive archive builder'
+inputs:
+  content_folder:
+    description: 'Folder containing all RDF XML'
+    required: true
+    default: 'content'
+outputs:
+  site:
+    description: 'The archive artifact itself'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.content_folder }}
