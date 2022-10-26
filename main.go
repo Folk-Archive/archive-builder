@@ -49,7 +49,7 @@ var fileArray []string
 
 func main() {
 
-	filepath.Walk("./items", VisitFiles)
+	filepath.Walk("./content", VisitFiles)
 
 	for i := 0; i < len(fileArray); i++ {
 		//fmt.Println(fileArray[i])
@@ -69,7 +69,7 @@ func main() {
 
 		for m := 0; m < len(item.Rdf); m++ {
 			//fmt.Println("ITEM: " + item.Rdf[m].Title)
-			webpageName := "pages/" + item.Rdf[m].Identifier + ".html"
+			webpageName := "site/pages/" + item.Rdf[m].Identifier + ".html"
 			stachio(item.Rdf[m], webpageName)
 		}
 	}
