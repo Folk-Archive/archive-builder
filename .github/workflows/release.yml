@@ -1,0 +1,35 @@
+name: Release Folk Archive
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  compile:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Install go
+        uses: actions/setup-go@v3
+      - name: Compile Folk Archive
+        run: go build main.go
+      - name Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload compiled binary
+        id: release_created_release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: main
+          asset_name: main
+          asset_content_type: bin
+          
