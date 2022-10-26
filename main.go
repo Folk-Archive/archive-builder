@@ -21,8 +21,8 @@ type Obj struct {
 	Title      string   `xml:"title"`
 	Date       string   `xml:"date"`
 
-	//Image
-	Desc string `xml:"description"`
+	Image string `xml:Image`
+	Desc  string `xml:"description"`
 
 	Type        string `xml:"type"`
 	Format      string `xml:"format"`
@@ -42,7 +42,7 @@ type Obj struct {
 	Rights   string `xml:"rights"`
 	Language string `xml:"language"`
 
-	//Relation string `xml:"relation"`
+	Relation string `xml:"relation"`
 }
 
 var fileArray []string
