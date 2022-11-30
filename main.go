@@ -83,7 +83,7 @@ func stachio(entry Obj, pageName string) {
 }
 
 func VisitFiles(path string, info os.FileInfo, err error) error {
-	// looking through items folder for each item's file
+	// looking through content folder for each item's file
 	if err != nil {
 		fmt.Println(err) // can't walk here,
 		return nil       // but continue walking elsewhere

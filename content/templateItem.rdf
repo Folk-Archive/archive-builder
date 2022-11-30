@@ -7,7 +7,9 @@
 
     <Image> </Image> <!--	A visual representation other than text.-->
     <description> lorem ipsum
-        </description> <!-- An account of the resource. May include an abstract, table of contents, graphical representationm or a free-text account of the resource. -->
+        </description> 
+        <!-- An account of the resource. May include an abstract, table of contents, graphical representationm 
+        or a free-text account of the resource. -->
 
     <type></type> <!--The nature or genre of the resource. ()-->
     <format></format> <!--The file format, physical medium, or dimensions of the resource.-->
@@ -15,7 +17,9 @@
     <Location></Location><!--A spatial region or named place.-->
 
     <subject></subject> <!--A topic of the resource.-->
-    <coverage></coverage> <!--The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.-->
+    <coverage></coverage> 
+      <!--The spatial or temporal topic of the resource, spatial applicability of the resource, 
+      or jurisdiction under which the resource is relevant.-->
         <spatial></spatial>
         <temporal></temporal>
 
@@ -24,10 +28,14 @@
     <contributor></contributor> <!--An entity responsible for making contributions to the resource.-->
     <publisher></publisher> <!--An entity responsible for making the resource available.-->
 
-    <rights></rights> <!--Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.-->
+    <rights></rights> 
+      <!--Information about rights held in and over the resource. 
+      Typically, rights information includes a statement about various property rights associated with the resource,
+      including intellectual property rights.-->
     <language></language> <!--A language of the resource.-->
 
     <relation><a></a></relation> <!--A related resource.-->
 
   </metadata>
 </rdf>
+
