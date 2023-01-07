@@ -69,7 +69,7 @@ func main() {
 
 		for m := 0; m < len(item.Rdf); m++ {
 			//fmt.Println("ITEM: " + item.Rdf[m].Title)
-			webpageName := "./site/pages/" + item.Rdf[m].Identifier + ".html"
+			webpageName := "./theme/pages/" + item.Rdf[m].Identifier + ".html"
 			stachio(item.Rdf[m], webpageName)
 		}
 	}
@@ -78,7 +78,7 @@ func main() {
 func stachio(entry Obj, pageName string) {
 	//template, _ := mustache.ParseFile("item.html.mustache")
 	//rendered, _ := mustache.RenderFile("item.html.mustache", entry)
-	rendered, _ := mustache.RenderFileInLayout("item.html.mustache", "layout.html.mustache", entry)
+	rendered, _ := mustache.RenderFileInLayout("./theme/item.html.mustache", "./theme/layout.html.mustache", entry)
 	ioutil.WriteFile(pageName, []byte(rendered), 0644)
 }
 
