@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 
 	"github.com/cbroglie/mustache"
@@ -48,6 +49,13 @@ type Obj struct {
 var fileArray []string
 
 func main() {
+
+	//copying images into website folder
+	oldDir := "./content/media"
+	newDir := "./theme/style/media"
+
+	cmd := exec.Command("cp", "--recursive", oldDir, newDir)
+	cmd.Run()
 
 	filepath.Walk("./content", VisitFiles)
 
